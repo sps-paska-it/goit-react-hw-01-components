@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
+import clsx from "clsx";
+import './Friends-item.css'
 
 export const FriendsItem = ({ avatar, name, isOnline }) => {
     return (
-        <li className="item">
-            <span className="status">{isOnline}</span>
-            <img className="avatar" src={avatar} alt="User avatar" width="48" />
-            <p className="name">{name}</p>
+        <li className='friend-list__item'>
+            <span className={clsx({online: isOnline, offline: !isOnline})}></span>
+            <img className='avatar' src={avatar} alt="User avatar" width="60" />
+            <p className='name'>{name}</p>
         </li>
     );
 };

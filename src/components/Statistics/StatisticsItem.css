@@ -1,0 +1,29 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: calc((100% - 20px) / 5);
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 4px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.one {
+  background-color: rgb(251, 251, 253);
+}
+.two {
+  background-color: rgb(157, 157, 253);
+}
+.four {
+  background-color: rgb(135, 135, 216);
+}
+.six {
+  background-color: rgb(101, 101, 145);
+}
+.eigth {
+  background-color: rgb(56, 56, 102);
+}
+.ten {
+  background-color: rgb(28, 28, 73);
+}

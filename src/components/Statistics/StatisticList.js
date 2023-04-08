@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import "./StatisticList.css";
 import { StatisticsItem } from "./StatisticsItem";
 
 export const StatisticList = ({ title, stats }) => {
@@ -10,11 +11,13 @@ export const StatisticList = ({ title, stats }) => {
 					return <StatisticsItem key={stat.id} {...stat} />;
 				})}
             </ul>
-        </section>
+        </section>  
     );
 };
 
 StatisticList.propTypes = {
     title: PropTypes.string.isRequired,
-    stats: PropTypes.array
+    stats: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired}))
 };

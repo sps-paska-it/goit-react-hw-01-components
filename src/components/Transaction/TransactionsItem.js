@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 export const TransactionsItem = ({ type, amount, currency }) => {
     return (
         <tr>
-            <th>{type}</th>
-            <th>{amount}</th>
-            <th>{currency}</th>
+            <td>{type}</td>
+            <td>{amount}</td>
+            <td>{currency}</td>
         </tr>
     );
 };

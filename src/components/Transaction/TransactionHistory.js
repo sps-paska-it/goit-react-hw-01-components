@@ -1,20 +1,24 @@
-import { TransactionsItem } from "./TransactionsItem";
+import { BaseTable, THead, Th, Tr, Td } from './TransactionHistory.styled.jsx';
 
 export const TransactionHistory = ({items}) => {
     return (
-        <table className="transaction-history">
-              <thead>
+        <BaseTable className="transaction-history">
+              <THead>
     <tr>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Currency</th>
+      <Th>Type</Th>
+      <Th>Amount</Th>
+      <Th>Currency</Th>
     </tr>
-  </thead>
+  </THead>
         <tbody>
           {items.map((item) => {
-					return <TransactionsItem key={item.id} {...item} />;
+					return <Tr key={item.id}>
+          <Td>{item.type}</Td>
+          <Td>{item.amount}</Td>
+          <Td>{item.currency}</Td>
+      </Tr>
 				})}
         </tbody>
-      </table>
+      </BaseTable>
     );
 };
