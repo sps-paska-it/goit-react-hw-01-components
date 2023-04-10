@@ -1,23 +1,25 @@
 import PropTypes from 'prop-types';
-import "./StatisticList.css";
-import { StatisticsItem } from "./StatisticsItem";
+import './StatisticList.css';
+import { StatisticsItem } from './StatisticsItem';
 
 export const StatisticList = ({ title, stats }) => {
     return (
         <section className="statistics">
-            <h2 className="title">{title}</h2>
+         { title && <h2 className='title'>{title}</h2> }
             <ul className="stat-list">
-            {stats.map((stat) => {
-					return <StatisticsItem key={stat.id} {...stat} />;
-				})}
+                {stats.map(stat => {
+                    return <StatisticsItem key={stat.id} {...stat} />;
+                })}
             </ul>
-        </section>  
+        </section>
     );
 };
 
 StatisticList.propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     stats: PropTypes.arrayOf(
         PropTypes.shape({
-          id: PropTypes.string.isRequired}))
+            id: PropTypes.string.isRequired,
+        })
+    ),
 };
